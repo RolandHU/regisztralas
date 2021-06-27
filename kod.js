@@ -37,11 +37,15 @@ function felfed() {
 }
 
 function ellenorzo() {
-    for (let i = 0; i < lista.length; i++) {
-        if (lista[i].value == "") {
-            lista[i].classList.remove("razas");
-            void lista[i].offsetWidth;
-            lista[i].classList.add("razas");
+    if (felhasznalonev.value == "" || email.value == "" || jelszo.value == "") {
+        for (let i = 0; i < lista.length; i++) {
+            if (lista[i].value == "") {
+                lista[i].classList.remove("razas");
+                void lista[i].offsetWidth;
+                lista[i].classList.add("razas");
+            }
         }
+    } else {
+        location.reload();
     }
 }
